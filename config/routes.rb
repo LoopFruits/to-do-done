@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   #testing configuration 
   get '/hello', to: 'application#hello_world'
+
+  get '*path',
+    to: 'fallback#index',
+    contraints: ->(req) { !req.xhr? && req.format.html? }
 end
