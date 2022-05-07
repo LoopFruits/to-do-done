@@ -7,6 +7,8 @@ class TodosController < ApplicationController
 
   #POST
   def create
+    todo = Todo.create(todo_params)
+    render json: todo
   end
 
   #Put 
@@ -16,4 +18,13 @@ class TodosController < ApplicationController
   #DELETE 
   def destroy
   end
+
+
+  private
+    
+
+  def todo_params
+    params.permit(:title, :done)
+  end
+
 end
