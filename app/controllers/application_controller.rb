@@ -2,12 +2,11 @@ class ApplicationController < ActionController::API
     include ActionController::Cookies
 
 
-    #checkingg cookies and sessions middleware functionality 
-    #count increases after page refresh 
+    # checkingg cookies and sessions middleware functionality 
+    # count increases after page refresh 
     def hello_world 
         session[:count] = (session[:count] || 0) + 1
         render json: { count: session[:count] }
     end
-
-    
+        
 end

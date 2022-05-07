@@ -1,8 +1,10 @@
 class TodosController < ApplicationController
+  before_action :authorize 
 
   #GET  /todos 
   def index
-    render json: Todos.all
+    todos = Todo.all
+    render json: todos
   end
 
   #POST
@@ -13,10 +15,17 @@ class TodosController < ApplicationController
 
   #Put 
   def update
+    todo = find_todo
+    todo.update(todo_params)
+    render json: todo
+    end
   end
 
   #DELETE 
   def destroy
+    todo = find_todo
+    todo.destroy 
+    head :no_content
   end
 
 
@@ -25,6 +34,15 @@ class TodosController < ApplicationController
 
   def todo_params
     params.permit(:title, :done)
+  end
+
+  def find_todo
+    Todo.find(params[:id])
+  end
+
+  # authorizing user 
+  def authorize
+    return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
   end
 
 end
