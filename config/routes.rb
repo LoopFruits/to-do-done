@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   #testing configuration 
   resources :todos 
+  resources :users, only: [:show, :create]
   get '/hello', to: 'application#hello_world'
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
