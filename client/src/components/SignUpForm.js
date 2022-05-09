@@ -36,4 +36,7 @@ function SignUpForm({ onLogin }) {
         });
       }
 
+
 }
+
+export default SignUpForm;
