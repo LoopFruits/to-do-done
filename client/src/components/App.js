@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import Login from "../pages/Login";
+import Login from "./Login";
+import NavBar from "./NavBar";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,7 +19,8 @@ function App() {
   if (!user) return <Login onLogin={setUser} />;
 
   return (
-
+    <>
+      <NavBar user={user} setUser={setUser} />
       <div className="App">
         <Switch>
           <Route path="/testing">
@@ -27,7 +30,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-
+    </>
   );
 }
 
