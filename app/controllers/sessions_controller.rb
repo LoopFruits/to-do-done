@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
       session.delete(:user_id)
       head :no_content
       else
-      render json: {errors: ["No user to log out"]}, status: :unauthorized
+      render json: {errors: ["Sorry chief"]}, status: :unauthorized
       end
   end
-  
+
 end
