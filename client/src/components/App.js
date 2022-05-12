@@ -26,7 +26,7 @@ function App() {
           <Route path="/testing">
             <h1>Test Route</h1>
           </Route>
-          <Route path="/">
+          <Route path="/login">
           </Route>
         </Switch>
       </div>

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
-  get 'sessions/destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -8,8 +6,8 @@ Rails.application.routes.draw do
   #testing configuration 
   resources :todos 
   # resources :users, only: [:show, :create]
-  post '/login', to: "sessions#create"
-  post '/logout', to: "session#destroy"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "session#destroy"
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
 
