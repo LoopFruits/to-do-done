@@ -3,9 +3,14 @@ import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import NavBar from "./NavBar";
 import Home from "./Home";
+import SignUpForm from "./SignUpForm";
+
+
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(false);
+  // const [user, setUser] = useState(null);
+
 
 
   useEffect(() => {
@@ -22,17 +27,18 @@ function App() {
   return (
     <>
       <NavBar user={user} setUser={setUser} />
-      <div className="App">
         <Switch>
           <Route exact path="/testing">
             <h1>Test Route</h1>
+          </Route>
+          <Route exact path="/SignUpForm">
+            <SignUpForm/>
           </Route>
           <Route exact path="/login">
             <Login setUser={setUser} />
           </Route>
           <Home user ={user} />
         </Switch>
-      </div>
     </>
   );
 }

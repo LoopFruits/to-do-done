@@ -1,16 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
 
 function NavBar({ user, setUser }) {
+  const history = useHistory();
+
   function handleLogoutClick() {
+    
+  
     fetch("/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUser(null);
+        history.push("/login");
       }
     });
   }
+
 
   return (
     <Wrapper>
@@ -26,6 +32,8 @@ function NavBar({ user, setUser }) {
         </Button>
       </Nav>
     </Wrapper>
+
+
   );
 }
 

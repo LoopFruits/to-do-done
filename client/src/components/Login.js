@@ -3,39 +3,37 @@ import styled from "styled-components";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import { Button } from "../styles";
-import { useHistory } from "react-router-dom";
 
 function Login({ onLogin }) {
-    const [showLogin, setShowLogin] = useState(true);
+  const [showLogin, setShowLogin] = useState(true);
 
-    return (
-        <Wrapper>
-          <Logo>To-Do-Done</Logo>
-          {showLogin ? (
-            <>
-              <LoginForm onLogin={onLogin} />
-              <Divider />
-              <p>
-                Don't have an account? &nbsp;
-                <Button color="secondary" onClick={() => setShowLogin(false)}>
-                  Sign Up
-                </Button>
-              </p>
-            </>
-          ) : (
-            <>
-              <SignUpForm onLogin={onLogin} />
-              <Divider />
-              <p>
-                Already have an account? &nbsp;
-                <Button color="secondary" onClick={() => setShowLogin(true)}>
-                  Log In
-                </Button>
-              </p>
-            </>
-          )}
-        </Wrapper>
-      );
+  return (
+    <Wrapper>
+      {showLogin ? (
+        <>
+          <LoginForm onLogin={onLogin} />
+          <Divider />
+          <p>
+            Don't have an account? &nbsp;
+            <Button color="secondary" onClick={() => setShowLogin(false)}>
+              Sign Up
+            </Button>
+          </p>
+        </>
+      ) : (
+        <>
+          <SignUpForm onLogin={onLogin} />
+          <Divider />
+          <p>
+            Already have an account? &nbsp;
+            <Button color="secondary" onClick={() => setShowLogin(true)}>
+              Log In
+            </Button>
+          </p>
+        </>
+      )}
+    </Wrapper>
+  );
 }
 
 const Logo = styled.h1`
@@ -56,6 +54,5 @@ const Divider = styled.hr`
   border-bottom: 1px solid #ccc;
   margin: 16px 0;
 `;
-
 
 export default Login;
