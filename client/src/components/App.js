@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import NavBar from "./NavBar";
-
+import Home from "./Home";
 
 function App() {
   const [user, setUser] = useState(null);
+
 
   useEffect(() => {
     // auto-login
@@ -23,11 +24,13 @@ function App() {
       <NavBar user={user} setUser={setUser} />
       <div className="App">
         <Switch>
-          <Route path="/testing">
+          <Route exact path="/testing">
             <h1>Test Route</h1>
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
+            <Login setUser={setUser} />
           </Route>
+          <Home user ={user} />
         </Switch>
       </div>
     </>
