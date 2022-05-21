@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import NavBar from "./NavBar";
-import Home from "./Home";
 import SignUpForm from "./SignUpForm";
 
 
 
+
+
 function App() {
+
   const [user, setUser] = useState(false);
   // const [user, setUser] = useState(null);
 
@@ -37,7 +39,6 @@ function App() {
           <Route exact path="/login">
             <Login setUser={setUser} />
           </Route>
-          <Home user ={user} />
         </Switch>
     </>
   );
