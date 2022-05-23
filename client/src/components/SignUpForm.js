@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import { Button, Error, Input, FormField, Label, Textarea } from "../styles";
+import React,{useState} from "react";
+import {useHistory} from "react-router-dom"
+import { Button, Error, Input, FormField, Label } from "../styles";
 
 
-function SignUpForm({ onLogin }) {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+
+function SignUpForm({onLogin}){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    
+    const history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -21,8 +23,6 @@ function SignUpForm({ onLogin }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            first_name: firstName,
-            last_name: lastName,
             username,
             password,
             password_confirmation: passwordConfirmation,
@@ -31,11 +31,14 @@ function SignUpForm({ onLogin }) {
           setIsLoading(false);
           if (r.ok) {
             r.json().then((user) => onLogin(user));
+            return history.push("/")
           } else {
             r.json().then((err) => setErrors(err.errors));
           }
         });
     }
+
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -70,24 +73,6 @@ function SignUpForm({ onLogin }) {
             />
           </FormField>
           <FormField>
-            <Label htmlFor="firstName">First Name</Label>
-            <Input
-              type="text"
-              id="first_name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </FormField>
-          <FormField>
-            <Label htmlFor="lastName">Last Name</Label>
-            <Textarea
-              rows="3"
-              id="last_name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </FormField>
-          <FormField>
             <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
           </FormField>
           <FormField>
@@ -96,9 +81,7 @@ function SignUpForm({ onLogin }) {
             ))}
           </FormField>
         </form>
-    );
-    
-
-}
+      );
+    }
 
 export default SignUpForm;

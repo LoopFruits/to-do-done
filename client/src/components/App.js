@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
-import Login from "./Login";
-import NavBar from "./NavBar";
-import SignUpForm from "./SignUpForm";
+import {Switch, Route} from 'react-router-dom';
+import  {useEffect,useState} from 'react';
+import Home from './Home';
+import Login from './Login';
 
+function App(){
+  const [user, setUser] = useState(null);
+  const [todo, setTodo] =useState([])
+  
 
+  
 
-
-
-function App() {
-
-  const [user, setUser] = useState(false);
-  // const [user, setUser] = useState(null);
 
 
 
@@ -20,28 +18,28 @@ function App() {
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
-      }
+        
+      };
     });
   }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
-        <Switch>
-          <Route exact path="/testing">
-            <h1>Test Route</h1>
-          </Route>
-          <Route exact path="/SignUpForm">
-            <SignUpForm/>
-          </Route>
-          <Route exact path="/login">
-            <Login setUser={setUser} />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route exact path="/">
+          <Home  user={user} setUser={setUser} />
+        </Route>
+        <Route exact path="/login">
+          <Login onLogin={setUser} />
+        </Route>
+      </Switch>
+
     </>
   );
-}
+
+};
+
+
 
 export default App;

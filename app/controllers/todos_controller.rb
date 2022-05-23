@@ -18,7 +18,6 @@ class TodosController < ApplicationController
     todo = find_todo
     todo.update(todo_params)
     render json: todo
-    end
   end
 
   #DELETE 

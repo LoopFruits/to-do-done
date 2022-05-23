@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         user_id = session[:user_id]
         #if user is logged return json resp with user info and https satus 201 (created)
         if user_id
-            user = User.find(user_id)
+            user = User.find(:user_id)
             render json: user, status: :created
         #if not logged in return json resp of 401(unauthorized)
         else
