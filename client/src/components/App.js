@@ -2,10 +2,11 @@ import {Switch, Route, useHistory } from 'react-router-dom';
 import  {useEffect,useState} from 'react';
 import Home from './Home';
 import Login from './Login';
+import TodoPage from './TodoList';
 
 function App(){
   const [user, setUser] = useState(null);
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([]);
   
   
 
@@ -49,6 +50,10 @@ function App(){
       
       <Route exact path="/login">
         <Login user={user} setUser={user}/>
+      </Route>
+
+      <Route exact path="/todos">
+        <TodoPage todos={todos} user={user} setUser={setUser}/>
       </Route>
 
     </Switch>
