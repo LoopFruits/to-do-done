@@ -34,7 +34,7 @@ function NewTodo({ user }) {
 
   return (
     <Wrapper>
-      <WrapperChild>
+      
         <h2>Create Todo</h2>
         <form onSubmit={handleSubmit}>
           <FormField>
@@ -51,7 +51,7 @@ function NewTodo({ user }) {
             <Label htmlFor="description">Descriptions</Label>
             <Textarea
               id="description"
-              rows="10"
+              rows="5"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
@@ -59,7 +59,7 @@ function NewTodo({ user }) {
 
           <FormField>
             <Button color="primary" type="submit">
-              {isLoading ? "Loading..." : "Submit Todo"}
+              {isLoading ? "Loading..." : "Create Todo"}
             </Button>
           </FormField>
 
@@ -69,11 +69,8 @@ function NewTodo({ user }) {
             ))}
           </FormField>
         </form>
-      </WrapperChild>
+      
 
-      <WrapperChild>
-        <p>{description}</p>
-      </WrapperChild>
     </Wrapper>
   );
 }
@@ -86,8 +83,6 @@ const Wrapper = styled.section`
   gap: 24px;
 `;
 
-const WrapperChild = styled.div`
-  flex: 1;
-`;
+
 
 export default NewTodo;

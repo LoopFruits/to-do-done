@@ -1,13 +1,15 @@
 import React from "react";
-import Navbar from "./NavBar";
+import NavBar from "./NavBar"
 
 
-function Home({ user,setUser }) {
+
+function Home({ user,setUser, setTodos, todos }) {
   
+console.log(todos)
 
   return (
     <div>
-      <Navbar user={user} setUser={setUser}/>
+     <NavBar user={user} setUser={setUser} setTodos={setTodos}/>
 
       {!user ?  
             <>
@@ -21,14 +23,15 @@ function Home({ user,setUser }) {
               <p >  This app was made for you to help organize your day. 
               <br></br>
               <br></br>
-              Click the "ToDO" button to get started!
+              Click the "New" button to get started!
               <br></br>
               <br></br>
               </p>
             </> 
       }
+      
     </div>
-  
+
   );
 }
 

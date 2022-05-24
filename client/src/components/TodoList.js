@@ -1,11 +1,19 @@
-import  React from "react";
-import { Link } from "react-router-dom";
+import  React, {useEffect, useState,} from "react";
+import {  Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
 
 
 
-function TodoList({user, todos,setTodos}){
+function TodoList({todos}){
+  console.log(todos);
+    // const [todos,setTodos]=useState([]);
+
+  // useEffect(() => {
+  //   fetch("/todos")
+  //     .then((r) => r.json())
+  //     .then(setTodos);
+  // }, []);
 
     return (
         <Wrapper>
@@ -14,7 +22,6 @@ function TodoList({user, todos,setTodos}){
               <Todo key={todo.id}>
                 <Box>
                   <h2>{todo.title}</h2>
-                  <p>{todo.description}</p>
                 </Box>
               </Todo>
             ))
@@ -28,7 +35,7 @@ function TodoList({user, todos,setTodos}){
           )}
         </Wrapper>
       );
-    }
+}
     
     const Wrapper = styled.section`
       max-width: 800px;

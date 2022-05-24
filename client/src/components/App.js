@@ -4,6 +4,7 @@ import Home from './Home';
 import Login from './Login';
 import TodoList from './TodoList';
 import NewTodo from './NewTodo';
+// import NavBar from './NavBar';
 
 function App(){
   const [user, setUser] = useState(null);
@@ -27,7 +28,8 @@ function App(){
   }, []);
 
 
-  //fetching todo's 
+  //fetching todo's dont need to fetch them from here?
+
   useEffect(() => {
     fetch("/todos").then((r) => {
       if (r.ok) {
@@ -41,19 +43,22 @@ function App(){
 
 
 
+  if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
+    {/* <NavBar user={user} setUser={setUser} /> */}
+    <>
     <Switch>
       <Route exact path="/">
-        <Home  user={user} setUser={user} />
+        <Home  user={user} setUser={user} todos={todos}  />
       </Route>
       
       <Route exact path="/login">
         <Login user={user} setUser={user}/>
       </Route>
 
-      <Route exact path="/newtd">
+      <Route exact path="/new">
         <NewTodo user={user} />
       </Route>
 
@@ -62,7 +67,7 @@ function App(){
       </Route>
 
     </Switch>
-
+    </>
 
     </>
   );

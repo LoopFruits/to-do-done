@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-# User.destroy_all
-# Todo.destroy_all
+User.destroy_all
+Todo.destroy_all
 
 
 puts "Seeding..."
