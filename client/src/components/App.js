@@ -5,7 +5,7 @@ import Login from './Login';
 
 function App(){
   const [user, setUser] = useState(null);
-  const [todo, setTodo] = useState([])
+  const [todos, setTodos] = useState([])
   
   
 
@@ -25,6 +25,17 @@ function App(){
   }, []);
 
 
+  //fetching todo's 
+  useEffect(() => {
+    fetch("/todos").then((r) => {
+      if (r.ok) {
+        r.json().then((todos) => {
+        console.log(todos)
+        setTodos(todos)
+        });
+      }
+    })
+  }, []);
 
 
 
