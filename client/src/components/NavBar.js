@@ -20,7 +20,7 @@ function NavBar({ user, setUser}) {
     return (
         <>
             {!user ? <Button as={Link} to="/login" exact>
-            Login
+            Logout
             </Button> :
             <>
             <Button variant="outline" onClick={handleLogoutClick}>
@@ -31,6 +31,11 @@ function NavBar({ user, setUser}) {
             <br></br>
             <br></br>
             </>}
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
         </>
     );
     }

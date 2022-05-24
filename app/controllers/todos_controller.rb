@@ -1,6 +1,8 @@
 class TodosController < ApplicationController
   # before_action :authorize 
 
+  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+
   #GET  /todos 
   def index
     todos = Todo.all
@@ -32,16 +34,20 @@ class TodosController < ApplicationController
     
 
   def todo_params
-    params.permit(:title, :done)
+    params.permit(:title, :description)
   end
 
   def find_todo
     Todo.find(params[:id])
   end
 
-  # authorizing user 
-  def authorize
-    return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
-  end
+  def render_not_found_response
+    render json: {error: "no todo around here"}, status: :not_found
+end
+
+  # # authorizing user 
+  # def authorize
+  #   return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+  # end
 
 end

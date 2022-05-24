@@ -9,6 +9,7 @@ function Login({ onLogin }) {
 
   return (
     <Wrapper>
+      <h1> Welcome to TO-DO-Done</h1>
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
