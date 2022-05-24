@@ -1,8 +1,10 @@
 import  React from "react";
-import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
+
+
+
 function TodoList({user, todos,setTodos}){
 
     return (
@@ -12,7 +14,7 @@ function TodoList({user, todos,setTodos}){
               <Todo key={todo.id}>
                 <Box>
                   <h2>{todo.title}</h2>
-                  <ReactMarkdown>{todo.description}</ReactMarkdown>
+                  <p>{todo.description}</p>
                 </Box>
               </Todo>
             ))
