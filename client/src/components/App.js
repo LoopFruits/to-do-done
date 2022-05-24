@@ -1,14 +1,15 @@
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, useHistory } from 'react-router-dom';
 import  {useEffect,useState} from 'react';
 import Home from './Home';
 import Login from './Login';
 
 function App(){
   const [user, setUser] = useState(null);
-  const [todo, setTodo] =useState([])
+  const [todo, setTodo] = useState([])
+  
   
 
-  
+  const history = useHistory();
 
 
 
@@ -24,16 +25,23 @@ function App(){
   }, []);
 
 
+
+
+
+
   return (
     <>
-      <Switch>
-        <Route exact path="/">
-          <Home  user={user} setUser={setUser} />
-        </Route>
-        <Route exact path="/login">
-          <Login onLogin={setUser} />
-        </Route>
-      </Switch>
+    <Switch>
+      <Route exact path="/">
+        <Home  user={user} setUser={user} />
+      </Route>
+      
+      <Route exact path="/login">
+        <Login user={user} setUser={user}/>
+      </Route>
+
+    </Switch>
+
 
     </>
   );

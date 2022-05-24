@@ -42,6 +42,7 @@ function SignUpForm({onLogin}){
 
     return (
         <form onSubmit={handleSubmit}>
+
           <FormField>
             <Label htmlFor="username">Username</Label>
             <Input
@@ -52,6 +53,7 @@ function SignUpForm({onLogin}){
               onChange={(e) => setUsername(e.target.value)}
             />
           </FormField>
+
           <FormField>
             <Label htmlFor="password">Password</Label>
             <Input
@@ -62,6 +64,7 @@ function SignUpForm({onLogin}){
               autoComplete="current-password"
             />
           </FormField>
+
           <FormField>
             <Label htmlFor="password">Password Confirmation</Label>
             <Input
@@ -75,6 +78,7 @@ function SignUpForm({onLogin}){
           <FormField>
             <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
           </FormField>
+          
           <FormField>
             {errors.map((err) => (
               <Error key={err}>{err}</Error>

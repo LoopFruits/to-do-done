@@ -1,13 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 // import { createGlobalStyle } from "styled-components";
-
-
-
-
 
 // const GlobalStyle = createGlobalStyle`
 //   *,
@@ -25,14 +21,12 @@ import { BrowserRouter } from 'react-router-dom';
 //   }
 // `;
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <BrowserRouter>
-  {/* <GlobalStyle /> */}
-  <App /> 
-  </BrowserRouter>
-  
+    {/* <GlobalStyle /> */}
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

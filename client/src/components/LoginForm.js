@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Error, Input, FormField, Label } from "../styles";
+import { Button, Error, FormField} from "../styles";
 import {useHistory} from "react-router-dom";
 // import { Redirect, Route } from "react-router-dom";
 
@@ -38,8 +38,8 @@ function LoginForm({ onLogin }) {
     return (
       <form onSubmit={handleSubmit} >
         <FormField>
-          <Label htmlFor="username">Username</Label>
-          <Input
+          <label htmlFor="username">Username:</label>
+          <input
             type="text"
             id="username"
             autoComplete="off"
@@ -48,8 +48,8 @@ function LoginForm({ onLogin }) {
           />
         </FormField>
         <FormField>
-          <Label htmlFor="password">Password</Label>
-          <Input
+          <label htmlFor="password">Password:</label>
+          <input
             type="password"
             id="password"
             autoComplete="current-password"

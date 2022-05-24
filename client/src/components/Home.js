@@ -1,11 +1,13 @@
 import React from "react";
-import Navbar from "react"
+import Navbar from "./NavBar";
+
+
 function Home({ user,setUser }) {
   
 
   return (
     <div>
-      {/* <Navbar user={user} setUser={setUser}/> */}
+      <Navbar user={user} setUser={setUser}/>
 
       {!user ?  
             <>

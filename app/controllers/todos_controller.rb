@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :authorize 
+  # before_action :authorize 
 
   #GET  /todos 
   def index
