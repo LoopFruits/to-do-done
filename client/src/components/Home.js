@@ -17,7 +17,7 @@ function capitalizeFirstLetter(string){
 }
 
 function handleDeleteTask(deletedTaskText){
-  setTodos(todos.filter((todo) => todo.text !== deletedTaskText));
+  setTodos(todos.filter((todo) => todo.text !== deletedTaskText.id));
 }
 
   return (

@@ -24,7 +24,7 @@ class TodosController < ApplicationController
 
   #DELETE 
   def destroy
-    todo = find_todo
+    todo = Todo.find(id: params[:id])
     todo.destroy 
     head :no_content
   end
@@ -42,7 +42,7 @@ class TodosController < ApplicationController
   end
 
   def render_not_found_response
-    render json: {error: "no todo around here"}, status: :not_found
+    render json: {error: "No Todo Around Here"}, status: :not_found
 end
 
   # authorizing user 
