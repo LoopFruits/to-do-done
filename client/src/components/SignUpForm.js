@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import {useHistory} from "react-router-dom"
 import { Button, Error, Input, FormField, Label } from "../styles";
 
 
@@ -11,63 +10,62 @@ function SignUpForm({onLogin}){
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     
-    const history = useHistory();
+    
 
     function handleSubmit(e) {
-        e.preventDefault();
-        setErrors([]);
-        setIsLoading(true);
-        fetch("/signup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username,
-            password,
-            password_confirmation: passwordConfirmation,
-          }),
-        }).then((r) => {
-          setIsLoading(false);
-          if (r.ok) {
-            r.json().then((user) => onLogin(user));
-            return history.push("/")
-          } else {
-            r.json().then((err) => setErrors(err.errors));
-          }
-        });
+      e.preventDefault();
+      setErrors([]);
+      setIsLoading(true);
+      fetch("/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+          password_confirmation: passwordConfirmation,
+        }),
+      }).then((r) => {
+        setIsLoading(false);
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
     }
 
 
 
     return (
-        <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
 
-          <FormField>
-            <Label htmlFor="username">Username</Label>
-            <Input
-              type="text"
-              id="username"
-              autoComplete="off"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </FormField>
+        <FormField>
+          <Label htmlFor="username">Username</Label>
+          <Input
+            type="text"
+            id="username"
+            autoComplete="off"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </FormField>
 
-          <FormField>
-            <Label htmlFor="password">Password</Label>
-            <Input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              autoComplete="current-password"
-            />
-          </FormField>
+        <FormField>
+          <Label htmlFor="password">Password</Label>
+           <Input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
+          />
+        </FormField>
 
-          <FormField>
-            <Label htmlFor="password">Password Confirmation</Label>
-            <Input
+        <FormField>
+          <Label htmlFor="password">Password Confirmation</Label>
+          <Input
               type="password"
               id="password_confirmation"
               value={passwordConfirmation}
@@ -75,17 +73,17 @@ function SignUpForm({onLogin}){
               autoComplete="current-password"
             />
           </FormField>
-          <FormField>
-            <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
-          </FormField>
+        <FormField>
+          <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
+        </FormField>
           
-          <FormField>
-            {errors.map((err) => (
-              <Error key={err}>{err}</Error>
-            ))}
-          </FormField>
-        </form>
-      );
-    }
+        <FormField>
+          {errors.map((err) => (
+            <Error key={err}>{err}</Error>
+          ))}
+        </FormField>
+      </form>
+  );
+}
 
 export default SignUpForm;
