@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+    skip_before_action :authorize, only: :create
+    
     #Post /singup
     # def create 
     #     #saving users id in session hash 

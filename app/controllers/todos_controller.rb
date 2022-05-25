@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-   before_action :authorize
+  #  before_action :authorize
 
   #  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
@@ -45,8 +45,8 @@ class TodosController < ApplicationController
 end
 
   # authorizing user 
-  def authorize
-    return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
-  end
+  # def authorize
+  #   return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+  # end
 
 end
