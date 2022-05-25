@@ -47,8 +47,11 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   gem "spring"
 end
+group :test do
+  gem 'rspec-json_expectations'
+  gem 'shoulda-matchers', '~> 4.0'
+end
 
-
-gem "active_model_serializers", "~> 0.10.13"
+gem "active_model_serializers", "~> 0.10.12"
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

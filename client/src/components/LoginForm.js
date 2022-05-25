@@ -24,11 +24,7 @@ function LoginForm({ onLogin }) {
       }).then((r) => {
         setIsLoading(false);
         if (r.ok) {
-          r.json().then((user) => {
-            onLogin(user);
-          console.log("logged in");
-          history.push("/")
-        })
+          r.json().then((user) => onLogin(user));
         } else {
           r.json().then((err) => setErrors(err.errors));
         }

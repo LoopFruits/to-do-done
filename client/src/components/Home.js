@@ -1,28 +1,43 @@
-import React, {useState} from "react";
-import NavBar from "./NavBar";
+import React from "react";
+// import NavBar from "./NavBar";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
-import NewTodo from "./NewTodo";
+//import NewTodo from "./NewTodo";
 
 
 
 
-function Home({ user,setUser, setTodos, todos, todo,  }) {
+function Home({ user,setUser, setTodos, todos, todo }) {
 
 console.log(todos);
+
+
 
 function capitalizeFirstLetter(string){
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function handleDeleteTask(deletedTaskText){
-  setTodos(todos.filter((todo) => todo.text !== deletedTaskText.id));
+
+function handleDeleteToDo(id) {
+  fetch(`/todos/${id}`, {
+    method: "DELETE",
+  }).then((r) => {
+    if (r.ok) {
+      setTodos((todos) =>
+        todos.filter((todo) => todo.id !== id)
+      );
+    }
+  });
 }
+
+// function handleDeleteTask(deletedTaskText){
+//   setTodos(todos.filter((todo) => todo.text !== deletedTaskText.id));
+// }
 
   return (
     <div>
-     <NavBar user={user} setUser={setUser} setTodos={setTodos}/>
+     {/* <NavBar user={user} setUser={setUser} setTodos={setTodos}  todo={todo}/> */}
 
       {!user ?  
             <>
@@ -53,7 +68,7 @@ function handleDeleteTask(deletedTaskText){
                 <Box>
                   <h2>{todo.title}</h2>
                   <p>{todo.description}</p>
-                  <button onClick={handleDeleteTask}>🚮</button>
+                  <button onClick={() => handleDeleteToDo(todo.id)}>🚮</button>
                 </Box>
               </Todo>
             ))
