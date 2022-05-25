@@ -3,9 +3,9 @@ import { useHistory } from "react-router";
 import styled from "styled-components";
 import { Button, Error, FormField, Input, Label, Textarea } from "../styles";
 
-function NewTodo({ user }) {
-  const [title, setTitle] = useState([]);
-  const [description, setDescription] = useState([]);
+function NewTodo({ user, todos ,setTodos }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
@@ -34,7 +34,7 @@ function NewTodo({ user }) {
 
   return (
     <Wrapper>
-      
+       <WrapperChild>
         <h2>Create Todo</h2>
         <form onSubmit={handleSubmit}>
           <FormField>
@@ -69,7 +69,7 @@ function NewTodo({ user }) {
             ))}
           </FormField>
         </form>
-      
+      </WrapperChild>
 
     </Wrapper>
   );
@@ -83,6 +83,9 @@ const Wrapper = styled.section`
   gap: 24px;
 `;
 
+const WrapperChild = styled.div`
+  flex: 1;
+`;
 
 
 export default NewTodo;
