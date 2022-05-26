@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: :create
+    before_action :authorize
+    skip_before_action :authorize, only: [:create]
     
     #Post /singup
     # def create 
@@ -13,12 +14,15 @@ class UsersController < ApplicationController
     #     render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
     # end
     
+
     def create
-        user = User.create!(create_user_params)
-        session[:user_id] ||= user.id
-        render json: user, status: :created
-    rescue ActiveRecord::RecordInvalid => invalid
-        render json: { errors: [invalid.record.errors] }, status: :unprocessable_entity
+        if (params[:password] != nil) && (params[:password] === params[:password_confirmation])
+            user = User.create!(create_user)
+            session[:user_id] = user.id
+            render json: user, status: :created
+        else
+            render json: { errors: ["Password can't be blank"] }, status: :unprocessable_entity
+        end
     end
 
     #GET  
@@ -30,19 +34,24 @@ class UsersController < ApplicationController
     #     end
     # end
 
+    # def show
+    #     user_id = session[:user_id]
+    #     if user_id
+    #         user = User.find(user_id)
+    #         render json: user, status: :created
+    #     else
+    #         render json: { error: "Unauthorized" }, status: :unauthorized
+    #     end
+    # end
+
     def show
-        user_id = session[:user_id]
-        if user_id
-            user = User.find(user_id)
-            render json: user, status: :created
-        else
-            render json: { error: "Unauthorized" }, status: :unauthorized
-        end
+        user = User.find_by(id: session[:user_id])
+        render json: user
     end
 
     private 
 
-    def create_user_params 
+    def create_user
         params.permit(:username, :password,:password_confirmation )
     end
 

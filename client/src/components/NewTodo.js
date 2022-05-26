@@ -13,6 +13,10 @@ function NewTodo({ user, todos ,setTodos }) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
+    // const newTodo = { //optimistic 
+    //   title: title,
+    //   description: description,
+    // }
     fetch("/todos", {
       method: "POST",
       headers: {
@@ -24,7 +28,8 @@ function NewTodo({ user, todos ,setTodos }) {
       }),
     }).then((r) => {
       setIsLoading(false);
-      if (r.ok) {
+      if (r.ok) { 
+        // r.json().then((r) => {}) pessimistic 
         history.push("/");
       } else {
         r.json().then((err) => setErrors(err.errors));

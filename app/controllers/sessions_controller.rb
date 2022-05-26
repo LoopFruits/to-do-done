@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorize, only: :create
+    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
+    before_action :authorize
+    skip_before_action :authorize, only: [:create]
 
 
 
@@ -22,6 +25,14 @@ class SessionsController < ApplicationController
         head :no_content
       end
     end
+
+    private
+
+    def record_not_found
+      render json: { error: "User not found" }, status: :not_found
+    end
+  
+
 
 end
 
