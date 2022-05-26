@@ -1,39 +1,35 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../styles";
 import styled, { keyframes } from "styled-components";
 
 
 function NavBar({ user, setUser }) {
-
-  const history = useHistory();
-
-    function handleLogoutClick() {
-      fetch("/logout", { method: "DELETE" }).then((r) => {
-        if (r.ok) {
-          setUser(null);
-          
-        }
-      });
-    }
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
   
-    return (
-      <Wrapper>
-        <Rotate>
-            <Logo>
-                <Link to="/">To-Dos</Link>
-            </Logo>
-        </Rotate>
-        <Nav>
-          <Button as={Link} to="/new">
-            New Todo
-          </Button>
-          <Button variant="outline" onClick={handleLogoutClick}>
-            Logout
-          </Button>
-        </Nav>
-      </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Rotate>
+        <Logo>
+          <Link to="/">To-Dos</Link>
+        </Logo>
+      </Rotate>
+      <Nav>
+        <Button as={Link} to="/new">
+          New Todo
+        </Button>
+        <Button variant="outline" onClick={handleLogoutClick}>
+          Logout
+        </Button>
+      </Nav>
+    </Wrapper>
+  );
 }
 
 const rotate = keyframes`

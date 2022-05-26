@@ -24,7 +24,11 @@ function LoginForm({ onLogin }) {
       }).then((r) => {
         setIsLoading(false);
         if (r.ok) {
-          r.json().then((user) => onLogin(user));
+          r.json().then((user) => {
+            onLogin(user);
+          console.log("logged in");
+          history.push("/")
+        })
         } else {
           r.json().then((err) => setErrors(err.errors));
         }
@@ -34,7 +38,7 @@ function LoginForm({ onLogin }) {
     return (
       <form onSubmit={handleSubmit} >
         <FormField>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username: </label>
           <input
             type="text"
             id="username"
@@ -44,7 +48,7 @@ function LoginForm({ onLogin }) {
           />
         </FormField>
         <FormField>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"

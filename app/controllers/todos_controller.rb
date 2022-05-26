@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
-  # before_action :authorize
+  before_action :authorize
 
-  # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+  #  rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   #GET  /todos 
   def index
@@ -40,9 +40,9 @@ class TodosController < ApplicationController
   #   Todo.find(params[:id])
   # end
 
-  def render_not_found_response
-    render json: {error: "No Todo Around Here"}, status: :not_found
-end
+  # def render_not_found_response
+  #   render json: {error: "No Todo Around Here"}, status: :not_found
+  # end
 
   # authorizing user 
   # def authorize
