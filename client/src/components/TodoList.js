@@ -13,6 +13,8 @@ function TodoList(){
   }, []);
 
 
+  // delete request 
+
   function handleDeleteToDo(id) {
   fetch(`/todos/${id}`, {
     method: "DELETE",
