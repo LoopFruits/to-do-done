@@ -11,14 +11,16 @@
 
 #   General info
 
+     Tracks tasks called to-do's than a user will be able to create and delete. 
+     
 #   Project Demo 
 
 #   Setup
 
+    React v15 
+    Rails v7
 
 #   Features 
 
 #   Contact 
 
-
-#   License
