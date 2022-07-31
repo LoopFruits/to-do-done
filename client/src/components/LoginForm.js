@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Button, Error, FormField} from "../styles";
 import {useHistory} from "react-router-dom";
-// import { Redirect, Route } from "react-router-dom";
 
 
 function LoginForm({ onLogin }) {
