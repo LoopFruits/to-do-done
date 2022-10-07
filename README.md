@@ -18,7 +18,8 @@
 *   Setup
 
     React v15 
-    Rails v7
+    Rails v7.2
+    
 
 
 * Code Snippet
