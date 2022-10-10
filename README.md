@@ -24,7 +24,11 @@
 
 * Code Snippet
 
-
+*    Features
+     -Authentication 
+     -Ability to create task
+     -Ability to delete task
+     
 
 
 *   Contact 
