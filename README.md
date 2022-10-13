@@ -1,6 +1,6 @@
 
 
- #Table of Contents 
+## Table of Contents 
 ##   General info 
 ##   Project Demo 
 ##   Setup
