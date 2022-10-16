@@ -1,15 +1,20 @@
 
 
 ## Table of Contents 
-##   General info 
+
+
+     * [General Info](#General-info)
 ##   Project Demo 
+
 ##   Setup
 ##   Features 
 ##   Contact 
 ##   License
 
 
-*  General info
+
+
+##   General info 
 
      Tracks tasks called to-do's than a user will be able to create and delete. 
      
