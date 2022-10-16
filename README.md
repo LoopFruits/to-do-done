@@ -3,7 +3,8 @@
 ## Table of Contents
 
 * [General info](#general-info)
-     
+* [Project Demo](#project-demo)
+* [Setup](#setup)
      
 ##   Project Demo 
 
