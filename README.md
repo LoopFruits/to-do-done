@@ -1,8 +1,8 @@
 
 
-## Table of Contents 
-  *[General info](#General-info)
-  *[Project Demo(#project-demo)
+## Table of Contents
+
+* [General info](#general-info)
      
      
 ##   Project Demo 
@@ -11,7 +11,6 @@
 ##   Features 
 ##   Contact 
 ##   License
-
 
 
 
