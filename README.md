@@ -1,9 +1,10 @@
 
 
 ## Table of Contents 
-
-
-     * [General Info](#General-info)
+  *[General info](#General-info)
+  *[Project Demo(#project-demo)
+     
+     
 ##   Project Demo 
 
 ##   Setup
@@ -27,9 +28,8 @@
     
 
 
-* Code Snippet
-
-*    Features
+### Code Snippet
+###  Features
      -Authentication 
      -Ability to create task
      -Ability to delete task
