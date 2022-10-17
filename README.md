@@ -5,12 +5,15 @@
 * [General info](#general-info)
 * [Project Demo](#project-demo)
 * [Setup](#setup)
+* [Code Snippet](#code-snippet)
+* [Features](#features)
+* [Contact Info](#contact-info)
      
 ##   Project Demo 
 
 ##   Setup
 ##   Features 
-##   Contact 
+##   Contact Info
 ##   License
 
 
@@ -36,7 +39,7 @@
      
 
 
-####   Contact 
+###   Contact Info
     
     https://www.linkedin.com/in/kenneth-the-dev/
     https://medium.com/@Kenneththedev
