@@ -8,15 +8,7 @@
 * [Code Snippet](#code-snippet)
 * [Features](#features)
 * [Contact Info](#contact-info)
-     
-##   Project Demo 
-
-##   Setup
-##   Features 
-##   Contact Info
-##   License
-
-
+    
 
 ##   General info 
 
