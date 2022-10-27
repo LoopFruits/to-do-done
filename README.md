@@ -58,15 +58,15 @@ function handleLogoutClick() {
 
 
 ##  Features
-  *Authentication 
-  *Ability to create task
-  *Ability to delete task
+  Authentication 
+  Ability to create task
+  Ability to delete task
      
 
 
 ##   Contact Info
     
-   *https://www.linkedin.com/in/kenneth-the-dev/
-   *https://medium.com/@Kenneththedev
-   *https://twitter.com/Kenneththedev
+   https://www.linkedin.com/in/kenneth-the-dev/
+   https://medium.com/@Kenneththedev
+   https://twitter.com/Kenneththedev
 
