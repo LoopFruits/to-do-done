@@ -11,14 +11,14 @@
 
 ##   General info 
 
-   Tracks tasks called to-do's, users will be able to read,create and delete tasks.
+Tracks tasks called to-do's, users will be able to read,create and delete tasks.
      
 
 ##   Setup
 
-  *React v15 
-  *Rails v7.2
-  *Ruby on Rails
+*React v15 
+*Rails v7.2
+*Ruby on Rails
     
 
 
@@ -58,15 +58,15 @@ function handleLogoutClick() {
 
 
 ##  Features
-  Authentication 
-  Ability to create task
-  Ability to delete task
+*Authentication 
+*Ability to create task
+*Ability to delete task
      
 
 
 ##   Contact Info
     
-   https://www.linkedin.com/in/kenneth-the-dev/
-   https://medium.com/@Kenneththedev
-   https://twitter.com/Kenneththedev
+*https://www.linkedin.com/in/kenneth-the-dev/
+*https://medium.com/@Kenneththedev
+*https://twitter.com/Kenneththedev
 
