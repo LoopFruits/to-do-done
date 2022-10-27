@@ -24,6 +24,40 @@
 
 
 ### Code Snippet
+
+```
+function NavBar({ user, setUser }) {
+function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
+  
+  return (
+    <Wrapper>
+      <Rotate>
+        <Logo>
+          <Link to="/">To-Dos</Link>
+        </Logo>
+      </Rotate>
+      <Nav>
+        <Button as={Link} to="/new">
+          New Todo
+        </Button>
+        <Button variant="outline" onClick={handleLogoutClick}>
+          Logout
+        </Button>
+      </Nav>
+    </Wrapper>
+  );
+}
+
+```
+
+
+
 ###  Features
      -Authentication 
      -Ability to create task
