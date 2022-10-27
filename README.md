@@ -3,7 +3,6 @@
 ## Table of Contents
 
 * [General info](#general-info)
-* [Project Demo](#project-demo)
 * [Setup](#setup)
 * [Code Snippet](#code-snippet)
 * [Features](#features)
@@ -12,18 +11,18 @@
 
 ##   General info 
 
-     Tracks tasks called to-do's than a user will be able to create and delete. 
+     Tracks tasks called to-do's, users will be able to read,create and delete tasks.
      
-####  Project Demo 
 
-####   Setup
+###   Setup
 
-    React v15 
-    Rails v7.2
+    *React v15 
+    *Rails v7.2
+    *Ruby on Rails
     
 
 
-### Code Snippet
+## Code Snippet
 
 ```
 function NavBar({ user, setUser }) {
@@ -58,15 +57,16 @@ function handleLogoutClick() {
 
 
 
-###  Features
-     -Authentication 
-     -Ability to create task
-     -Ability to delete task
+##  Features
+     *Authentication 
+     *Ability to create task
+     *Ability to delete task
      
 
 
-###   Contact Info
+##   Contact Info
     
-    https://www.linkedin.com/in/kenneth-the-dev/
-    https://medium.com/@Kenneththedev
+    *https://www.linkedin.com/in/kenneth-the-dev/
+    *https://medium.com/@Kenneththedev
+    *https://twitter.com/Kenneththedev
 
