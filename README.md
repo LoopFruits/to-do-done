@@ -58,9 +58,9 @@ function handleLogoutClick() {
 
 
 ##  Features
-   *Authentication 
-   *Ability to create task
-   *Ability to delete task
+  *Authentication 
+  *Ability to create task
+  *Ability to delete task
      
 
 
