@@ -70,4 +70,5 @@ function handleLogoutClick() {
 * https://www.linkedin.com/in/kenneth-the-dev/
 * https://medium.com/@Kenneththedev
 * https://twitter.com/Kenneththedev
+* https://github.com/LoopFruits
 
