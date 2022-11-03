@@ -5,7 +5,7 @@
 * [General info](#general-info)
 * [Setup](#setup)
 * [Code Snippet](#code-snippet)
-* [Features](#features)
+* [Backend Features](#backend-features)
 * [Contact Info](#contact-info)
     
 
@@ -55,13 +55,15 @@ function handleLogoutClick() {
 
 ```
 
+## Backend Features
 
-
-##  Features
-* Authorization
-* Authentication 
-* Ability to create task
-* Ability to delete task
+* Auth
+* Tests
+* Multiple has_many_through relationships
+* Seeds from a complex data set
+* Custom routes
+* Custom controller/model methods
+* Validation
 
      
 
