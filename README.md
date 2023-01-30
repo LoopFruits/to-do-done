@@ -11,7 +11,7 @@
 
 ##   General info 
 
-Tracks tasks called to-do's, users will be able to read,create and delete tasks.
+Task managing application that tracks tasks called to-do's, users will be able to read,create and delete tasks.
      
 
 ##   Setup
@@ -19,6 +19,7 @@ Tracks tasks called to-do's, users will be able to read,create and delete tasks.
 * React v15 
 * Rails v7.2
 * Ruby on Rails
+* CSS
     
 
 
